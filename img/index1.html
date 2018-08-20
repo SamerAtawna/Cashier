@@ -1,0 +1,108 @@
+
+<!-- saved from url=(0064)http://localhost:63342/TurkishBurger/index1.php?tbl=1&status=new -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><div class="noty"> מחובר לשרת <font color="#00FF23"><i class="far fa-dot-circle"></i></font></div>
+
+
+<script src="./index1_files/jquery-3.3.1.js.download" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./index1_files/script.js.download"></script>
+    <script>
+        function charge() {
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                request=new XMLHttpRequest();
+            } else {  // code for IE6, IE5
+                request=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            request.onreadystatechange = function()
+            {
+                if (request.readyState<4 ) {
+                    console.log(("Loading..."))
+                }
+                if (request.readyState==4 && request.status == 200) {
+                    console.log(("Connected"))
+                }
+            }
+            request.open("GET","charge.php?",true);
+            request.send();
+        }
+
+
+
+
+    </script>
+      <link rel="stylesheet" href="./index1_files/style.css">
+    <link rel="stylesheet" href="./index1_files/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
+
+    <script>
+     
+    </script>
+    <div class="topnav">
+          <img src="./index1_files/logo1.jpeg" class="logo">
+            <div class="tblid">שולחן 1<div class="sts">הזמנה חדשה</div>                                    </div>
+        <a href="http://localhost:63342/TurkishBurger/index.php">back</a>
+    </div>
+
+
+
+    <div class="container">
+    
+        <div class="items">
+           
+            <ul><li id="1" onclick="addtoarray(this.id, 20,&quot;Hamburger&quot;)">Hamburger<div class="price" '="">20</div></li><li id="3" onclick="addtoarray(this.id, 50,&quot;Pizza&quot;)">Pizza<div class="price" '="">50</div></li><li id="6" onclick="addtoarray(this.id, 20,&quot;פלאפל&quot;)">פלאפל<div class="price" '="">20</div></li>            </ul>
+        </div>
+    
+    
+            <div class="items1">
+            <ul>
+          <li id="4" onclick="addtoarray(this.id, 8,&quot;קולה&quot;)">קולה<div class="price" '="">8</div></li>           
+            </ul>
+        </div>
+        
+         <div class="items3">
+            <ul>
+                    <li id="5" onclick="addtoarray(this.id, 15,&quot;נרגילה&quot;)">נרגילה<div class="price" '="">15</div></li>                
+           
+            </ul>
+        </div>
+            <div class="clientinfo">מספר טלפון<input class="inputphone" type="text" size="30" id="phone">
+        
+        <div class="TA">לקחת <input class="ta" name="ta" type="radio" value="yes"> 
+                לשבת <input class="ta" name="ta" type="radio" value="no"> 
+                </div>
+        
+        </div>
+   
+          <div class="listitems">
+            <ul id="basket">
+      
+                
+           
+            </ul>
+        </div>
+          <input type="text" size="20" class="total" id="total1">
+        <input type="button" value="reset" style="position:absolute;bottom:20px;left:13%; height:10%;width:10%;" onclick="clear1()">
+        <input type="submit" value="תשלום" onclick="charge()">
+    </div>
+    <script>
+    
+        var items=[];
+         document.getElementById("total1").value=0;
+function addtoarray(x, prc, itm)
+{
+    items.push(x);
+   document.getElementById("total1").value = parseInt(prc)+parseInt(document.getElementById("total1").value);
+    $("#basket").append("<li>  "+itm+"<div class=\"price\">"+prc+"</li>");
+}
+         function clear1(){
+            
+           $( "#basket" ).children().remove();      
+            document.getElementById("total1").value=0;
+             items=[];
+         }
+    
+    </script>
+
+</body></html>

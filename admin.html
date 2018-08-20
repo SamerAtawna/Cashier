@@ -1,0 +1,77 @@
+<html>
+<head>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+     <link rel="stylesheet" type="text/css" href="Style/admin.css">
+</head>
+    
+    <script>
+    
+    function gettables(){
+        $("#act").val("tables");
+         $.ajax({
+                type: "POST",
+
+                url: "admindo.php",
+                data: {data : $("#act").val()},
+                cache: false,
+                datatype:"html",
+                success: function(result){
+                    document.getElementById("result").innerText = result;
+                },
+                error: function(xhr, desc, err) {
+                    console.log(xhr);
+                    console.log("Details: " + desc + "\nError:" + err);
+
+                }
+            });
+        
+    }
+    
+    
+    </script>
+<body>
+    <div class="container">
+        <div class="top">
+        מסך ניהול 
+        </div>
+    <div class="main">
+       <div class="menu">
+            <ul>
+           <li>הוספת שולחנות</li>
+            <li>הוספת מוצרים</li>
+                   <li>דו"ח יומי</li>
+                   <li>מלאי</li>
+                   <li>תפריט</li>
+                   <li>תפריט</li>
+                   <li>תפריט</li>
+                   <li>תפריט</li>
+                   <li>תפריט</li>
+           </ul>
+        </div>
+        <input type="hidden" id="act">
+        
+        <div class="targettables">
+            <p>הוספת שולחנות</p>
+            <div class="tables">
+            מספר שולחן : <input type="text"> <a href="#">הוספה</a>
+                
+                <br> <br>
+                <input type="button" value="הצג שולחנות קיימים" onclick="gettables()">
+            <div id="result"></div>
+            </div>
+            
+            
+        </div>
+        
+        </div>
+    
+    
+    
+    
+    </div>
+    
+</body>
+</html>

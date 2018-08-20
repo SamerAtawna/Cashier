@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
+body{
+        font-family: "Rubik";
+}
+.container
+{position: relative;  
+width:100%;
+    height:100%;
+    direction: rtl;
+}
+.top{
+    position:relative;
+    width:100%;
+    height:20%;
+    background-image: url(../img/logo1.jpeg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border:1px solid;
+    font-family: "Rubik";
+    text-align: center;
+    font-size: 72;
+      display: inline-block;
+    vertical-align: middle;
+    
+
+ 
+}
+.main{
+    position:relative;
+    border:1px solid;
+    height:70%;
+    margin-top:20px;
+    padding:20px;
+}
+.menu
+{
+    position:absolute;
+    border:1px solid;
+    width:15%;
+    height:80%;
+    background-color: f73859;
+    padding-right: 0px;
+    
+    
+}
+.menu ul 
+{
+    position:absolute;
+    list-style-type: none;
+    width:90%;
+    right:0px;
+       padding-right: 20px;
+    
+ 
+    
+}
+.menu ul li
+{
+ 
+   color:white;
+    border:1px solid;
+    width:80%;
+    height:10%;
+       right:0px;
+    margin:15px;
+    height:20px;
+    background-color:232931;
+    border-radius: 5px;
+    box-shadow: 2px 1px 4px black;
+padding:10px;
+cursor:pointer;
+    
+}
+.targettables
+{position: relative;
+    width:80%;
+    height:100%;
+    background-color:f1d18a;
+    display: inline-block;
+    float: left;
+}
+.targettables p{position: absolute;
+    text-align: center;
+    right:40%;
+    font-size: 28px;
+  
+}
+.tables
+{position:absolute;
+    right:20%;
+    top:20%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
